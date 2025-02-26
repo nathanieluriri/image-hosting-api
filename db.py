@@ -4,11 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI")
+COLLECTION = os.getenv("COLLECTION")
 
 # Connect to MongoDB
 client = MongoClient(MONGO_URI)
 
-db = client['Deliveries']  
+db = client[COLLECTION]  
 url_collection = db['ImageLinks']  
 counters_collection = db['counters']
 
